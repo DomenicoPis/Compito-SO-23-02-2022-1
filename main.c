@@ -34,7 +34,7 @@ int main(){
     int id_shm_operandi = shmget(key_shm_operandi, sizeof(MonitorOperandi), IPC_CREAT|0664); // Nota: usiamo sizeof(MonitorOperandi) perché include sia il Monitor che l'array dati
 
     /* TODO: ottenere il riferimento alla shared memory che contiene il monitor operandi */
-    MonitorOperandi * pc_op = MonitorOperandi * pc_op = (MonitorOperandi *) shmat(id_shm_operandi, NULL, 0); 
+    MonitorOperandi * pc_op = (MonitorOperandi *) shmat(id_shm_operandi, NULL, 0); 
 
     int id_ris_shm = shmget(key_ris_shm, sizeof(statistica), IPC_CREAT|0664);
 
